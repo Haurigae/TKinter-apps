@@ -1,0 +1,22 @@
+from tkinter import *
+from tkinter.ttk import *
+
+from datetime import datetime as dt
+from time import *
+root = Tk()
+root.title("GreenSprings Clock")
+
+def DT():
+    date= strftime("%A, %d %B, %Y")
+    time1 = strftime("%I:%M:%S %p")
+    label1.config(text=date)
+    label2.config(text=time1)
+    label2.after(1000, DT)
+     
+label1 = Label(root, font=("Agency FB", 32), background="black", foreground="white")
+label1.pack(anchor="center")
+label2 = Label(root, font=("DIGITAL DREAM", 32), background="black", foreground="cyan")
+label2.pack(anchor="center")
+DT()
+
+mainloop()
